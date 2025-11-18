@@ -1,3 +1,6 @@
+
+
+
 "use client";
 
 import Image from "next/image";
@@ -5,46 +8,29 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Trophy,
-  Building2,
+ 
   Users,
-  Zap,
+
   Award,
   Droplets,
- 
   Check,
 } from "lucide-react";
 
-
 const achievements = [
   {
-    image: "/images/Achievements/images-3.jpeg", // Certificate
-    icon: Trophy,
-    badge: "2024 Award",
-    color: "from-blue-500 to-cyan-500",
+    image: "/images/Achievements/images-3.jpeg", 
   },
   {
-    image: "/images/Achievements/images-4.jpeg", // Governor House Invite
-    icon: Building2,
-    badge: "2024 Partnership",
-    color: "from-emerald-500 to-teal-500",
+    image: "/images/Achievements/images-4.jpeg", 
   },
   {
-    image: "/images/Achievements/images-1.jpeg", // Health Care Expo
-    icon: Users,
-    badge: "2024 Expo",
-    color: "from-purple-500 to-pink-500",
+    image: "/images/Achievements/images-1.jpeg", 
   },
   {
-    image: "/images/Achievements/images-2.jpeg", 
-    icon: Zap,
-    badge: "2025 Fair",
-    color: "from-amber-500 to-orange-500",
+    image: "/images/Achievements/images-2.jpeg",
   },
   {
-    image: "/images/Achievements/images-5.jpeg", 
-    icon: Zap,
-    badge: "2025 Fair",
-    color: "from-amber-500 to-orange-500",
+    image: "/images/Achievements/images-5.jpeg",
   },
 ];
 
@@ -185,7 +171,7 @@ export default function AchievementsClient() {
         </div>
       </section>
 
-      {/* IMAGES IN ONE LINE */}
+      {/* IMAGES IN ONE LINE - WITHOUT BADGES AND ICONS */}
       <section className="py-16 bg-white">
         <div className="max-w-[1600px] mx-auto px-8 md:px-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -210,14 +196,7 @@ export default function AchievementsClient() {
                       blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/OnPfQAJJAPYb2m9YQAAAABJRU5ErkJggg=="
                     />
                   </div>
-                  <div
-                    className={`absolute top-4 left-4 bg-gradient-to-r ${ach.color} text-white px-4 py-1.5 rounded-full text-xs font-light uppercase tracking-wider shadow-lg`}
-                  >
-                    {ach.badge}
-                  </div>
-                  <div className="absolute bottom-4 right-4 bg-white rounded-2xl p-3 shadow-xl">
-                    <ach.icon className="w-8 h-8 text-blue-600" />
-                  </div>
+                  {/* BADGE AND ICON BOTH REMOVED */}
                 </div>
               </motion.div>
             ))}
