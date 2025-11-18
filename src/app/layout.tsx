@@ -21,16 +21,22 @@ export const metadata: Metadata = {
     default: "Nature Water | Pure Bottled Water in Pakistan",
     template: "%s | Nature Water",
   },
-  description: "Purity in Every Drop — Trusted for 25 Years. Premium mineral water delivered across Karachi and Pakistan.",
+  description:
+    "Purity in Every Drop — Trusted for 25 Years. Premium mineral water delivered across Karachi and Pakistan.",
   keywords:
     "nature water, mineral water pakistan, pure bottled water, karachi water delivery, premium water, healthy water, mineral water karachi",
 
-  // ✅ YAHAN FAVICON ADD KAREN
+  //  FAVICON
   icons: {
     icon: [
       {
         url: "/favicon.ico",
         sizes: "any",
+      },
+      {
+        url: "/favicon-64x64.png",
+        sizes: "64x64",
+        type: "image/png",
       },
       {
         url: "/favicon-32x32.png",
@@ -47,7 +53,7 @@ export const metadata: Metadata = {
     ],
   },
 
-  // Google Search Console Verification 
+  // Google Search Console Verification
   verification: {
     google: "MsXR74ZYPPhaXe3bGKp75rrbthZhZCqn0iZkN_nOUDI",
   },

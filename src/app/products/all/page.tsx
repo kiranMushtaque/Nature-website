@@ -1,6 +1,4 @@
 
-
-
 // src/app/products/all/page.tsx
 import { Metadata } from "next";
 import Image from "next/image";
@@ -12,7 +10,7 @@ import { Shield, Droplets, Clock, Award } from "lucide-react";
 export const metadata: Metadata = {
   title: "Nature Water Products | Premium Bottled Water in Karachi",
   description:
-    "Explore Nature Water’s full range: 19L bottles, 1.5L, 500ml, shrink packs & dispensers. PSQCA certified, ISO 25003, free delivery in Karachi.",
+    "Explore Nature Water's full range: 19L bottles, 1.5L, 500ml, shrink packs & dispensers. PSQCA certified, ISO 25003, free delivery in Karachi.",
   openGraph: {
     title: "Nature Water Products – Pure. Premium. Delivered.",
     description: "19L, 1.5L, 500ml bottles & dispensers. Order via WhatsApp.",
@@ -64,7 +62,7 @@ export default function AllProductsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
-      {/* HERO – Premium Water Company Style */}
+      {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-50 via-white to-blue-50 py-24">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-96 h-96 bg-blue-300/20 rounded-full blur-3xl animate-pulse"></div>
@@ -88,10 +86,11 @@ export default function AllProductsPage() {
             <span className="block sm:inline">Pure Living</span>
           </h1>
 
-          <p className="text-xl md:text-2xl font-light text-slate-600 max-w-4xl mx-auto leading-relaxed">
-            From 19L home bottles to 500ml travel packs — every drop is PSQCA
-            certified, ISO 2003 compliant.
-          </p>
+          {/* FIXED RESPONSIVE PARAGRAPH - YEH SIRF IS PART KO FIX KIYA */}
+          <div className="text-lg sm:text-xl md:text-2xl font-light text-slate-600 max-w-4xl mx-auto leading-relaxed px-4">
+            <p className="hidden sm:block">From 19L home bottles to 500ml travel packs — every drop is PSQCA certified, ISO 2003 compliant.</p>
+            <p className="sm:hidden">From 19L bottles to 500ml packs every drop is PSQCA certified, ISO 2003 compliant.</p>
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center pt-6">
             <a

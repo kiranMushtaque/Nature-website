@@ -14,7 +14,6 @@ export default function ProductCard({ product }: { product: Product }) {
   const { addToCart, cartItems } = useCart();
   const [isAdding, setIsAdding] = useState(false);
 
-  // یہاں ! لگایا ہے تاکہ TypeScript کو یقین ہو جائے کہ item ضرور ملے گا جب موجود ہو
   const item = cartItems.find((i) => i.id === product.id);
 
   const handleAdd = () => {
@@ -165,3 +164,4 @@ export default function ProductCard({ product }: { product: Product }) {
     </article>
   );
 }
+

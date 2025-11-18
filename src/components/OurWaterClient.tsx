@@ -1,3 +1,5 @@
+
+
 "use client";
 
 import React from "react";
@@ -39,9 +41,8 @@ export default function OurWaterClient() {
               }
             }
           `}</style>
-          <div className="hero-bg absolute inset-0" />
 
-          {/* Overlay - Fixed (No toggle needed) */}
+          {/* Overlay */}
           <div className="absolute inset-0 bg-blue-900/85 md:bg-blue-900/80" />
 
           {/* CONTENT - TEXT FULLY VISIBLE */}
@@ -59,13 +60,15 @@ export default function OurWaterClient() {
               </h2>
             </div>
 
-            {/* TEXT - NO CROP, RESPONSIVE */}
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto text-blue-50 font-medium leading-relaxed px-4 sm:px-6 drop-shadow-md break-words hyphens-auto">
-              At Nature Water, purity is our promise and passion. As
-              Pakistan&apos;s first-ever national bottled water brand with both
-              national and international certifications, we&apos;re setting new
-              benchmarks in safe hydration and quality assurance.
-            </p>
+            {/* TEXT - FIXED RESPONSIVE */}
+            <div className="w-full max-w-4xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-50 font-medium leading-relaxed px-4 sm:px-6 drop-shadow-md">
+                At Nature Water, purity is our promise and passion. As
+                Pakistan&apos;s first-ever national bottled water brand with
+                both national and international certifications, we&apos;re
+                setting new benchmarks in safe hydration and quality assurance.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -120,10 +123,11 @@ export default function OurWaterClient() {
                 Essential Minerals
               </h3>
               <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                To enhance it&apos;s smooth and balanced flavor, we add a carefully
-                measured blend of essential minerals after purification. This
-                gives Nature Water it&apos;s distinctive pure taste that&apos;s ideal
-                for daily hydration, fitness, and family health.
+                To enhance it&apos;s smooth and balanced flavor, we add a
+                carefully measured blend of essential minerals after
+                purification. This gives Nature Water it&apos;s distinctive pure
+                taste that&apos;s ideal for daily hydration, fitness, and family
+                health.
               </p>
             </article>
 
@@ -186,8 +190,6 @@ export default function OurWaterClient() {
             </div>
           </article>
         </section>
-
-       
       </div>
     </>
   );

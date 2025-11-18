@@ -1,7 +1,5 @@
 
 
-
-
 "use client";
 
 import Link from "next/link";
@@ -10,8 +8,6 @@ import {
   Facebook,
   Instagram,
   Linkedin,
-  Twitter,
-  Youtube,
   Phone,
   MapPin,
   ChevronRight,
@@ -50,40 +46,40 @@ export default function NestleStyleFooter() {
     sendToWhatsApp();
     alert("Your application has been sent via WhatsApp!");
     setCareerModal(false);
-    setFormData({
-      name: "",
-      phone: "",
-      position: "",
-      message: "",
-      cv: null,
-    });
+    setFormData({ name: "", phone: "", position: "", message: "", cv: null });
   };
 
   return (
     <>
       <footer
         className="relative bg-cover bg-center bg-no-repeat text-gray-300 mt-20"
-        style={{
-          backgroundImage: `url('/images/footer.jpeg')`,
-        }}
+        style={{ backgroundImage: `url('/images/footer.jpeg')` }}
       >
-        {/* Dark Overlay for Readability */}
         <div className="absolute inset-0 bg-black/20" />
 
-        {/* Main Footer Content */}
         <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-            {/* Company Info */}
+        
             <div className="lg:col-span-2">
-              <div className="relative h-12 w-32 mb-6">
-                <Image
-                  src="/images/products/naturewater-logo.png"
-                  alt="Nature Water"
-                  width={150}
-                  height={60}
-                  className="drop-shadow-md"
-                />
-              </div>
+          
+<div className="relative mb-8 inline-block">  
+
+  <div className="absolute -inset-x-4 -inset-y-3 bg-white/95 rounded-3xl blur-xl -z-10"></div>
+  <div className="absolute -inset-x-2 -inset-y-2 bg-white/90 rounded-2xl -z-10"></div>
+  
+ 
+  <div className="relative h-12 w-32 bg-white rounded-2xl shadow-2xl flex items-center justify-center p-3">  {/* w-40 → w-32 */}
+    <Image
+      src="/images/products/naturewater-logo.png"
+      alt="Nature Water"
+      width={140}    
+      height={56}
+      className="drop-shadow-lg"
+    />
+  </div>
+</div>
+
+            
 
               <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-md">
                 Karachi&apos;s leading bottled water company, delivering premium
@@ -97,6 +93,7 @@ export default function NestleStyleFooter() {
                   Connect With Us
                 </h3>
                 <div className="flex space-x-3">
+                 
                   <a
                     href="https://www.facebook.com/share/1AAwjetVFC/"
                     target="_blank"
@@ -139,27 +136,12 @@ export default function NestleStyleFooter() {
                       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.62V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64v-3.9a6.68 6.68 0 0 0-5.75 6.7 6.68 6.68 0 0 0 6.71 6.7 6.68 6.68 0 0 0 6.7-6.7V9.72a10.47 10.47 0 0 0 6.13 2.03V8.23a7.5 7.5 0 0 1-4.38-1.54Z" />
                     </svg>
                   </a>
-                  <a
-                    href="https://twitter.com/naturewater"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white/20 backdrop-blur-sm hover:bg-sky-500 p-2.5 rounded-full transition-colors duration-300"
-                    aria-label="Twitter"
-                  >
-                    <Twitter className="w-5 h-5" />
-                  </a>
-                  <a
-                    href="https://youtube.com/@naturewater"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-white/20 backdrop-blur-sm hover:bg-red-600 p-2.5 rounded-full transition-colors duration-300"
-                    aria-label="YouTube"
-                  >
-                    <Youtube className="w-5 h-5" />
-                  </a>
+                
                 </div>
               </div>
             </div>
+
+           
 
             {/* Quick Links */}
             <div>
@@ -214,13 +196,11 @@ export default function NestleStyleFooter() {
             </div>
 
             {/* Contact Info */}
-            {/* Contact Info */}
             <div>
               <h3 className="text-white font-bold text-sm mb-4 uppercase tracking-wide">
                 Contact Info
               </h3>
               <ul className="space-y-5">
-                {/* Address */}
                 <li className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
                   <div className="text-sm">
@@ -231,8 +211,6 @@ export default function NestleStyleFooter() {
                     </p>
                   </div>
                 </li>
-
-                {/* Helpline */}
                 <li className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
                   <div className="text-sm">
@@ -276,7 +254,7 @@ export default function NestleStyleFooter() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Bottom Bar & Trust Badges - */}
         <div className="relative border-t border-white/10 backdrop-blur-sm">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
@@ -284,31 +262,11 @@ export default function NestleStyleFooter() {
                 © {new Date().getFullYear()} Nature Water Pvt. Ltd. All rights
                 reserved.
               </p>
-              <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm">
-                <Link
-                  href="/privacy"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-                <Link
-                  href="/terms"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Terms & Conditions
-                </Link>
-                <Link
-                  href="/sitemap"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Sitemap
-                </Link>
-              </div>
+            
             </div>
           </div>
         </div>
 
-        {/* Trust Badges */}
         <div className="relative bg-black/30 backdrop-blur-sm border-t border-white/10">
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <div className="flex flex-wrap justify-center items-center gap-6 text-xs text-gray-300">
@@ -340,7 +298,7 @@ export default function NestleStyleFooter() {
         </div>
       </footer>
 
-      {/* Career Modal */}
+      {/* Career Modal  */}
       {careerModal && (
         <div
           className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
@@ -364,8 +322,8 @@ export default function NestleStyleFooter() {
                 </button>
               </div>
             </div>
-
             <form onSubmit={handleSubmit} className="p-6 space-y-5">
+           
               <input
                 type="text"
                 required
@@ -376,7 +334,6 @@ export default function NestleStyleFooter() {
                 }
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
               />
-
               <input
                 type="tel"
                 required
