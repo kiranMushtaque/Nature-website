@@ -1,0 +1,18 @@
+# https://naturewater.com.pk/robots.txt
+User-agent: *
+Allow: /
+
+# Block private & dynamic pages
+Disallow: /admin/
+Disallow: /login/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /api/
+Disallow: /search
+Disallow: /*?*utm_
+Disallow: /*?*ref=
+Disallow: /*.php$
+Disallow: /*.pdf$
+
+# Sitemap
+Sitemap: https://naturewater.com.pk/sitemap.xml
