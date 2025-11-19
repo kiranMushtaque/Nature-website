@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -153,16 +154,18 @@ export default function NatureCustomClient() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className="group relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500"
+                className="group relative rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 bg-gray-50"
               >
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  priority={idx < 2}
-                />
+                <div className="relative w-full h-80 md:h-96 lg:h-80">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-contain group-hover:scale-105 transition-transform duration-700"
+                    priority={idx < 2}
+                  />
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </motion.div>
             ))}
@@ -183,7 +186,7 @@ export default function NatureCustomClient() {
                 Your Brand, Our Bottle — A Perfect Partnership
               </h2>
               <p className="text-lg lg:text-xl text-gray-600 leading-relaxed">
-                At <strong>Nature Water</strong>, we go beyond hydration — we
+                At <strong>Nature Water</strong>, we go beyond hydration we
                 help you make an impression. With our Customized Branding
                 Service, your brand becomes part of every refreshing sip.
               </p>
@@ -388,3 +391,13 @@ export default function NatureCustomClient() {
     </main>
   );
 }
+
+
+
+
+
+
+
+
+
+
