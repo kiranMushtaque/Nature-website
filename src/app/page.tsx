@@ -321,7 +321,7 @@ export default function HomePage() {
               </motion.div>
             </div>
 
-            {/* Premium Footer Note */}
+            {/*  Footer Note */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -339,6 +339,4 @@ export default function HomePage() {
     </div>
   );
 }
-
-
 

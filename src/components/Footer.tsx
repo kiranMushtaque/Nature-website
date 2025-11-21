@@ -13,6 +13,7 @@ import {
   ChevronRight,
   Briefcase,
   X,
+  CheckCircle2,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -33,7 +34,7 @@ export default function NestleStyleFooter() {
     text += `*Phone:* ${phone}\n`;
     text += `*Position:* ${position}\n`;
     if (message) text += `*Message:* ${message}\n`;
-    if (cv) text += `*CV:* ${cv.name}\n`;
+    if (cv) text += `*CV Attached:* ${cv.name}\n`;
 
     const whatsappUrl = `https://wa.me/923005553186?text=${encodeURIComponent(
       text
@@ -44,7 +45,7 @@ export default function NestleStyleFooter() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     sendToWhatsApp();
-    alert("Your application has been sent via WhatsApp!");
+    alert("Your application has been sent successfully via WhatsApp!");
     setCareerModal(false);
     setFormData({ name: "", phone: "", position: "", message: "", cv: null });
   };
@@ -53,102 +54,96 @@ export default function NestleStyleFooter() {
     <>
       <footer
         className="relative bg-cover bg-center bg-no-repeat text-gray-300 mt-20"
-        style={{ backgroundImage: `url('/images/footer.jpeg')` }}
+        style={{ backgroundImage: "url('/images/footer.png')" }}
+        aria-labelledby="footer-heading"
       >
-        <div className="absolute inset-0 bg-black/20" />
+        <h2 id="footer-heading" className="sr-only">
+          Footer
+        </h2>
 
-        <div className="relative max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
-        
-            <div className="lg:col-span-2">
-          
-<div className="relative mb-8 inline-block">  
+        <div className="absolute inset-0 bg-black/24" />
 
-  <div className="absolute -inset-x-4 -inset-y-3 bg-white/95 rounded-3xl blur-xl -z-10"></div>
-  <div className="absolute -inset-x-2 -inset-y-2 bg-white/90 rounded-2xl -z-10"></div>
-  
- 
-  <div className="relative h-12 w-32 bg-white rounded-2xl shadow-2xl flex items-center justify-center p-3">  {/* w-40 → w-32 */}
-    <Image
-      src="/images/products/naturewater-logo.png"
-      alt="Nature Water"
-      width={140}    
-      height={56}
-      className="drop-shadow-lg"
-    />
-  </div>
-</div>
-
-            
-
-              <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-md">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+            {/* Company Info & Social */}
+            <div className="lg:col-span-5">
+              <div className="relative mb-10 inline-block">
+                <div className="absolute -inset-x-6 -inset-y-4 bg-white/20 backdrop-blur-xl rounded-3xl -z-10"></div>
+                <div className="relative bg-white rounded-3xl shadow-2xl p-4 flex items-center justify-center w-44 h-20">
+                  <Image
+                    src="/images/footer-logo.png"
+                    alt="Nature Water - Premium Purified Bottled Water in Karachi | Official Logo"
+                    width={180}
+                    height={80}
+                    className="drop-shadow-md object-contain"
+                    priority
+                  />
+                </div>
+              </div>
+              <p className="text-gray-300 text-sm leading-relaxed mb-8 max-w-lg">
                 Karachi&apos;s leading bottled water company, delivering premium
                 quality purified water to homes, offices, and corporates across
                 Karachi for over 25 years. Your health is our priority.
               </p>
 
-              {/* Social Media */}
-              <div className="space-y-3">
-                <h3 className="text-white font-semibold text-sm mb-3">
+              {/* Social Media  */}
+              <div className="mb-8">
+                <h3 className="text-white font-semibold text-sm mb-4">
                   Connect With Us
                 </h3>
-                <div className="flex space-x-3">
-                 
+                <div className="flex space-x-4 [&_a]:no-underline">
                   <a
                     href="https://www.facebook.com/share/1AAwjetVFC/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/20 backdrop-blur-sm hover:bg-blue-600 p-2.5 rounded-full transition-colors duration-300"
-                    aria-label="Facebook"
+                    className="bg-white/20 backdrop-blur-sm hover:bg-[#1877F2] p-3 rounded-full transition-all duration-300 group"
+                    aria-label="Follow Nature Water on Facebook"
                   >
-                    <Facebook className="w-5 h-5" />
+                    <Facebook className="w-5 h-5 text-white group-hover:scale-110 transition" />
                   </a>
                   <a
-                    href="https://www.instagram.com/naturehealthywater?igsh=MWR5d3pwYzIybWQxMQ=="
+                    href="https://www.instagram.com/naturehealthywater"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/20 backdrop-blur-sm hover:bg-pink-600 p-2.5 rounded-full transition-colors duration-300"
-                    aria-label="Instagram"
+                    className="bg-white/20 backdrop-blur-sm hover:bg-gradient-to-tr from-pink-500 to-orange-500 p-3 rounded-full transition-all duration-300 group"
+                    aria-label="Follow Nature Water on Instagram"
                   >
-                    <Instagram className="w-5 h-5" />
+                    <Instagram className="w-5 h-5 text-white group-hover:scale-110 transition" />
                   </a>
                   <a
                     href="https://www.linkedin.com/company/nature-water/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/20 backdrop-blur-sm hover:bg-blue-700 p-2.5 rounded-full transition-colors duration-300"
-                    aria-label="LinkedIn"
+                    className="bg-white/20 backdrop-blur-sm hover:bg-[#0A66C2] p-3 rounded-full transition-all duration-300 group"
+                    aria-label="Connect with Nature Water on LinkedIn"
                   >
-                    <Linkedin className="w-5 h-5" />
+                    <Linkedin className="w-5 h-5 text-white group-hover:scale-110 transition" />
                   </a>
                   <a
                     href="https://www.tiktok.com/@naturewaterofficial"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/20 backdrop-blur-sm hover:bg-black p-2.5 rounded-full transition-colors duration-300"
-                    aria-label="TikTok"
+                    className="bg-white/20 backdrop-blur-sm hover:bg-black p-3 rounded-full transition-all duration-300 group"
+                    aria-label="Follow Nature Water on TikTok"
                   >
                     <svg
-                      className="w-5 h-5"
+                      className="w-5 h-5 text-white"
                       fill="currentColor"
                       viewBox="0 0 24 24"
                     >
                       <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.62V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64v-3.9a6.68 6.68 0 0 0-5.75 6.7 6.68 6.68 0 0 0 6.71 6.7 6.68 6.68 0 0 0 6.7-6.7V9.72a10.47 10.47 0 0 0 6.13 2.03V8.23a7.5 7.5 0 0 1-4.38-1.54Z" />
                     </svg>
                   </a>
-                
                 </div>
               </div>
             </div>
 
-           
-
             {/* Quick Links */}
-            <div>
-              <h3 className="text-white font-bold text-sm mb-4 uppercase tracking-wide">
+            <div className="lg:col-span-2">
+              <h3 className="text-white font-bold text-sm mb-6 uppercase tracking-wider">
                 Quick Links
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {[
                   { href: "/", label: "Home" },
                   { href: "/about", label: "About Us" },
@@ -159,9 +154,9 @@ export default function NestleStyleFooter() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2 group no-underline"
+                      className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2 group"
                     >
-                      <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       {link.label}
                     </Link>
                   </li>
@@ -169,12 +164,12 @@ export default function NestleStyleFooter() {
               </ul>
             </div>
 
-            {/* Services */}
-            <div>
-              <h3 className="text-white font-bold text-sm mb-4 uppercase tracking-wide">
+            {/* Our Services */}
+            <div className="lg:col-span-2">
+              <h3 className="text-white font-bold text-sm mb-6 uppercase tracking-wider">
                 Our Services
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {[
                   { href: "/products/all", label: "Bottled Water" },
                   { href: "/corporate", label: "Corporate Supply" },
@@ -185,9 +180,9 @@ export default function NestleStyleFooter() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-gray-300 hover:text-white transition-colors duration-200 text-sm flex items-center gap-2 group no-underline"
+                      className="text-gray-300 hover:text-white transition-colors text-sm flex items-center gap-2 group"
                     >
-                      <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       {link.label}
                     </Link>
                   </li>
@@ -196,37 +191,37 @@ export default function NestleStyleFooter() {
             </div>
 
             {/* Contact Info */}
-            <div>
-              <h3 className="text-white font-bold text-sm mb-4 uppercase tracking-wide">
+            <div className="lg:col-span-3">
+              <h3 className="text-white font-bold text-sm mb-6 uppercase tracking-wider">
                 Contact Info
               </h3>
-              <ul className="space-y-5">
-                <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
-                  <div className="text-sm">
-                    <p className="text-white font-medium mb-1">Address</p>
-                    <p className="text-gray-300 leading-relaxed">
-                      Plot # B-213, Sector 6-F Mehran town korangi industrial
-                      Karachi.
+              <ul className="space-y-6">
+                <li className="flex gap-4">
+                  <MapPin className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-white font-medium">Head Office</p>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      Plot # B-213, Sector 6-F, Mehran Town, Korangi Industrial
+                      Area, Karachi, Pakistan
                     </p>
                   </div>
                 </li>
-                <li className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-blue-400 mt-0.5 flex-shrink-0" />
-                  <div className="text-sm">
-                    <p className="text-white font-medium mb-1">UAN</p>
+                <li className="flex gap-4">
+                  <Phone className="w-6 h-6 text-cyan-400 flex-shrink-0 mt-1" />
+                  <div>
+                    <p className="text-white font-medium">Call Us</p>
                     <a
                       href="tel:111628873"
-                      className="text-gray-300 hover:text-white transition-colors block font-medium"
+                      className="text-xl font-bold text-white hover:text-cyan-300 transition"
                     >
-                      111-628-873{" "}
-                      <span className="text-cyan-400 font-bold">(NATURE)</span>
+                      111-NATURE{" "}
+                      <span className="text-cyan-400">(111-628-873)</span>
                     </a>
                     <a
                       href="https://wa.me/923005553186"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-green-400 hover:text-green-300 transition-colors block mt-1 text-sm"
+                      className="block mt-2 text-green-400 hover:text-green-300 font-medium"
                     >
                       WhatsApp: 0300-5553186
                     </a>
@@ -234,96 +229,95 @@ export default function NestleStyleFooter() {
                 </li>
               </ul>
             </div>
+          </div>
 
-            {/* Career Section */}
-            <div className="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-xl text-white border border-white/20">
-              <h3 className="font-bold text-lg mb-3 flex items-center gap-2">
-                <Briefcase className="w-6 h-6" />
-                Join Our Team
-              </h3>
-              <p className="text-sm mb-4 opacity-90">
-                We&apos;re hiring! Send your CV via WhatsApp.
-              </p>
-              <button
-                onClick={() => setCareerModal(true)}
-                className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold py-2.5 rounded-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                Apply Now
-              </button>
+          {/* Career CTA Section */}
+          <div className="mt-16 pt-10 border-t border-slate-700/50">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-r from-slate-800/80 to-slate-700/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-slate-600/50">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="flex items-center gap-6">
+                    <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-4 rounded-xl">
+                      <Briefcase className="w-10 h-10 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-2">
+                        Join Our Team
+                      </h3>
+                      <p className="text-gray-300 max-w-md">
+                        We&apos;re always looking for talented professionals to
+                        join our growing team.
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => setCareerModal(true)}
+                    className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold py-3 px-8 rounded-xl hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 whitespace-nowrap"
+                  >
+                    Apply Now
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar & Trust Badges - */}
-        <div className="relative border-t border-white/10 backdrop-blur-sm">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <p className="text-gray-400 text-sm text-center md:text-left">
-                © {new Date().getFullYear()} Nature Water Pvt. Ltd. All rights
-                reserved.
-              </p>
-            
-            </div>
-          </div>
-        </div>
-
-        <div className="relative bg-black/30 backdrop-blur-sm border-t border-white/10">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex flex-wrap justify-center items-center gap-6 text-xs text-gray-300">
+        {/* Trust Badges */}
+        <div className="bg-black/40 backdrop-blur-md border-t border-white/10 py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-wrap justify-center gap-8 text-sm">
               {[
                 "ISO Certified",
                 "PSQCA Approved",
                 "25+ Years Trusted",
                 "100% Pure Water",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-2">
-                  <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
-                    <svg
-                      className="w-4 h-4 text-white"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </div>
-                  <span>{item}</span>
+              ].map((badge) => (
+                <div key={badge} className="flex items-center gap-3">
+                  <CheckCircle2 className="w-6 h-6 text-green-400" />
+                  <span className="text-gray-300 font-medium">{badge}</span>
                 </div>
               ))}
             </div>
           </div>
         </div>
+
+        {/* Copyright */}
+        <div className="bg-black/60 py-6 text-center">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} Nature Water Pvt. Ltd.
+            </p>
+          </div>
+        </div>
       </footer>
 
-      {/* Career Modal  */}
+      {/* Career Modal */}
       {careerModal && (
         <div
-          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
           onClick={() => setCareerModal(false)}
         >
           <div
-            className="bg-white rounded-2xl shadow-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="p-6 border-b border-gray-200">
+            <div className="p-6 border-b">
               <div className="flex justify-between items-center">
-                <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
-                  <Briefcase className="w-6 h-6 text-blue-600" />
+                <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-3">
+                  <Briefcase className="w-7 h-7 text-blue-600" />
                   Career Application
                 </h2>
                 <button
                   onClick={() => setCareerModal(false)}
-                  className="p-2 rounded-full hover:bg-gray-100 transition"
+                  className="p-2 hover:bg-gray-100 rounded-full transition"
+                  aria-label="Close"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-6 h-6" />
                 </button>
               </div>
             </div>
+
             <form onSubmit={handleSubmit} className="p-6 space-y-5">
-           
               <input
                 type="text"
                 required
@@ -332,17 +326,17 @@ export default function NestleStyleFooter() {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-4 focus:ring-blue-500 focus:border-blue-500 transition"
               />
               <input
                 type="tel"
                 required
-                placeholder="Phone *"
+                placeholder="Phone Number *"
                 value={formData.phone}
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
                 }
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-4 focus:ring-blue-500 focus:border-blue-500 transition"
               />
               <input
                 type="text"
@@ -352,16 +346,16 @@ export default function NestleStyleFooter() {
                 onChange={(e) =>
                   setFormData({ ...formData, position: e.target.value })
                 }
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-4 focus:ring-blue-500 focus:border-blue-500 transition"
               />
               <textarea
-                rows={3}
+                rows={4}
                 placeholder="Message (Optional)"
                 value={formData.message}
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
+                className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-4 focus:ring-blue-500 focus:border-blue-500 transition resize-none"
               />
               <div>
                 <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -376,14 +370,14 @@ export default function NestleStyleFooter() {
                       cv: e.target.files?.[0] || null,
                     })
                   }
-                  className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700"
+                  className="block w-full text-sm text-gray-600 file:mr-4 file:py-3 file:px-6 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white font-bold py-3 rounded-lg hover:shadow-xl transition-all duration-300"
+                className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-4 rounded-xl hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg"
               >
-                Send via WhatsApp
+                Send Application via WhatsApp
               </button>
             </form>
           </div>
@@ -392,3 +386,5 @@ export default function NestleStyleFooter() {
     </>
   );
 }
+
+
