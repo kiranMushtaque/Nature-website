@@ -71,7 +71,7 @@ export default function NestleStyleFooter() {
                 <div className="absolute -inset-x-6 -inset-y-4 bg-white/20 backdrop-blur-xl rounded-3xl -z-10"></div>
                 <div className="relative bg-white rounded-3xl shadow-2xl p-4 flex items-center justify-center w-44 h-20">
                   <Image
-                    src="/images/footer-logo.png"
+                    src="/images/footer-logo-with-25years.png"
                     alt="Nature Water - Premium Purified Bottled Water in Karachi | Official Logo"
                     width={180}
                     height={80}

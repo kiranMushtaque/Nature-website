@@ -4,6 +4,7 @@
 
 import ProductCard from "@/components/ProductCard";
 import { Product } from "@/data/products";
+
 import Link from "next/link";
 import {
   ShoppingBag,
